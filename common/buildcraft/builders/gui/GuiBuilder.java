@@ -11,6 +11,7 @@ package buildcraft.builders.gui;
 import java.util.ArrayList;
 import java.util.List;
 
+import buildcraft.core.lib.gui.slots.SlotInput;
 import org.lwjgl.opengl.GL11;
 import io.netty.buffer.ByteBuf;
 

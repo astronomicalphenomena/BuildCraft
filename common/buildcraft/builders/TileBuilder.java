@@ -406,18 +406,18 @@ public class TileBuilder extends TileAbstractBuilder implements IHasWork, IFluid
 		}
 
 		if (done && getStackInSlot(0) != null) {
-			boolean dropBlueprint = true;
-			for (int i = 1; i < getSizeInventory(); ++i) {
-				if (getStackInSlot(i) == null) {
-					setInventorySlotContents(i, getStackInSlot(0));
-					dropBlueprint = false;
-					break;
-				}
-			}
-			if (dropBlueprint) {
-				InvUtils.dropItems(getWorldObj(), getStackInSlot(0), xCoord, yCoord, zCoord);
-			}
-
+//			boolean dropBlueprint = true;
+//			for (int i = 1; i < getSizeInventory(); ++i) {
+//				if (getStackInSlot(i) == null) {
+//					setInventorySlotContents(i, getStackInSlot(0));
+//					dropBlueprint = false;
+//					break;
+//				}
+//			}
+//			if (dropBlueprint) {
+//				InvUtils.dropItems(getWorldObj(), getStackInSlot(0), xCoord, yCoord, zCoord);
+//			}
+			getStackInSlot(0);
 			setInventorySlotContents(0, null);
 			box.reset();
 		}
@@ -928,6 +928,7 @@ public class TileBuilder extends TileAbstractBuilder implements IHasWork, IFluid
 						left -= slot.getStackInSlot().stackSize;
 					}
 				}
+
 			}
 		}
 

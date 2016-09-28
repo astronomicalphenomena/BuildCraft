@@ -8,6 +8,7 @@
  */
 package buildcraft.builders.gui;
 
+import buildcraft.core.lib.gui.slots.SlotInput;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.IInventory;
@@ -30,8 +31,7 @@ public class ContainerBuilder extends BuildCraftContainer {
 		this.scrollbarWidget = new ScrollbarWidget(172, 17, 18, 0, 108);
 		this.scrollbarWidget.hidden = true;
 		this.addWidget(scrollbarWidget);
-
-		addSlotToContainer(new Slot(builder, 0, 80, 27));
+		addSlotToContainer(new SlotInput(builder, 0, 80, 27));
 
 		for (int k = 0; k < 3; k++) {
 			for (int j1 = 0; j1 < 9; j1++) {

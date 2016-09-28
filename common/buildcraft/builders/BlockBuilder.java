@@ -8,6 +8,8 @@
  */
 package buildcraft.builders;
 
+import buildcraft.core.lib.utils.Utils;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
@@ -42,6 +44,16 @@ public class BlockBuilder extends BlockBuildCraft {
 	public void registerBlockIcons(IIconRegister register) {
 		super.registerBlockIcons(register);
 		blockTopOn = register.registerIcon("buildcraftbuilders:builderBlock/top_on");
+	}
+	@Override
+	public void breakBlock(World world, int x, int y, int z, Block block, int par6) {
+		TileEntity tile = world.getTileEntity(x, y, z);
+		TileBuilder builder = tile instanceof TileBuilder ? (TileBuilder) tile : null;
+		if (builder != null)
+		{
+			builder.setInventorySlotContents(0, null);
+		}
+		super.breakBlock(world, x, y, z, block, par6);
 	}
 
 	@Override
